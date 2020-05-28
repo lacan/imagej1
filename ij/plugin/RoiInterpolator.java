@@ -32,7 +32,7 @@ public class RoiInterpolator implements PlugIn {
 		int zmin = Integer.MAX_VALUE;
 		ArrayList<Integer> templateSlices = new ArrayList<Integer>();
 		for (Roi roi : rois){
-			int slice = roiman.getSliceNumber(roi.getName());
+			int slice = roiman.getSliceNumber(roi, roi.getName());
 			if (!templateSlices.contains(new Integer(slice)))
 				templateSlices.add(new Integer(slice));
 			if (slice==0) //ignore non-slice associated ROIs
